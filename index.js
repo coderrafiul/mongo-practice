@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 const uri = process.env.DB_PATH;
 
 let client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-const users=["Shorna", "Razib", "Sakib", "Ayesha"]
+
 
 
 // GET
@@ -34,13 +34,7 @@ app.get('/products', (req,res)=>{
       });
 })
 
-app.get('/fruit', (req,res)=>{
-    const fruit={
-        name: "Orange",
-        price: 170
-    }
-    res.send(fruit);
-})
+
 
 app.get('/product/:key', (req,res)=>{
     const key= req.params.key;
